@@ -1,0 +1,83 @@
+name: 企業エントリー
+description: 新しい企業の選考エントリーを記録します
+labels: ["企業"]
+body:
+  - type: input
+    id: company_name
+    attributes:
+      label: 企業名
+      placeholder: 例) 株式会社〇〇
+    validations:
+      required: true
+
+  - type: dropdown
+    id: industry
+    attributes:
+      label: 業種
+      options:
+        - IT
+        - 製造
+        - 金融
+        - コンサル
+        - 商社
+        - その他
+    validations:
+      required: true
+
+  - type: input
+    id: salary
+    attributes:
+      label: 想定年収（万円）
+      placeholder: 例) 450
+    validations:
+      required: false
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: ステータス
+      options:
+        - 未エントリー
+        - ES提出済
+        - 書類選考中
+        - 面接中
+        - 内定
+        - 不合格
+        - 辞退
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: ES締め切り日
+      placeholder: 例) 2026-03-31
+    validations:
+      required: false
+
+  - type: input
+    id: es_link
+    attributes:
+      label: ESリンク
+      description: リポジトリ内のESファイルへのパス（作成後に記入）
+      placeholder: 例) ES/CompanyName_20260312.md
+    validations:
+      required: false
+
+  - type: input
+    id: careers_url
+    attributes:
+      label: 採用ページURL
+      placeholder: 例) https://example.com/careers
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: メモ
+      description: 企業研究メモ、選考対策など
+      placeholder: 事業内容、志望理由、強みなど
+    validations:
+      required: false
