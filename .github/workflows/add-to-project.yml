@@ -1,0 +1,23 @@
+name: 企業Issueをプロジェクトに自動追加
+
+on:
+  issues:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    permissions:
+      issues: read
+    # 「企業」ラベルが付いているIssueのみ対象
+    if: contains(github.event.issue.labels.*.name, '企業')
+    steps:
+      - uses: actions/add-to-project@v1.0.2
+        with:
+          # リポジトリのGitHub ProjectsのURL（例: https://github.com/users/<username>/projects/<number>）
+          # リポジトリのSecretsに PROJECT_URL として登録してください
+          project-url: ${{ secrets.PROJECT_URL }}
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}

@@ -1,0 +1,27 @@
+# GitHub ラベル設定
+# このファイルは就活管理リポジトリで使用するラベルを定義します。
+# `gh label create` コマンドや labels-sync などのツールで適用できます。
+
+- name: 企業
+  color: "0075ca"
+  description: 企業エントリー・選考情報に関するIssue
+
+- name: ES
+  color: "e4e669"
+  description: エントリーシートに関するIssue
+
+- name: 面接
+  color: "d93f0b"
+  description: 面接に関するIssue
+
+- name: 内定
+  color: "0e8a16"
+  description: 内定を獲得した企業
+
+- name: 不合格
+  color: "b60205"
+  description: 選考結果が不合格だった企業
+
+- name: 辞退
+  color: "cccccc"
+  description: 辞退した企業
